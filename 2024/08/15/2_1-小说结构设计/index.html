@@ -16,24 +16,26 @@
   <meta name="author" content="杜子源">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 用Chisel设计各模块">
+    <meta name="description" content="小说推理架构思路从7月份开始构思小说，已经构思了一个月，但是还是没有很好的思路，为了防止自己内耗，我决定把自己平时拆书的心得分享给大家！本篇讲的是小说故事线的推理架构以及拆书，如何从各大榜单上找到有用的信息点。 1. 开篇通用模板网文的开篇小说的通用模板如下：   切入事件（一下子能抓住读者眼球） 解释事件因果，目的是解释主角身份背景（拉仇恨、博同情、制造氛围），接下来即将面临什么危机 主角怎么想">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1-用Chisel设计CPU各模块">
-<meta property="og:url" content="http://example.com/2024/08/15/1-%E7%94%A8Chisel%E8%AE%BE%E8%AE%A1CPU%E5%90%84%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:title" content="1-小说组织架构">
+<meta property="og:url" content="http://example.com/2024/08/15/2_1-%E5%B0%8F%E8%AF%B4%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="旺仔杂货铺">
-<meta property="og:description" content="1. 用Chisel设计各模块">
+<meta property="og:description" content="小说推理架构思路从7月份开始构思小说，已经构思了一个月，但是还是没有很好的思路，为了防止自己内耗，我决定把自己平时拆书的心得分享给大家！本篇讲的是小说故事线的推理架构以及拆书，如何从各大榜单上找到有用的信息点。 1. 开篇通用模板网文的开篇小说的通用模板如下：   切入事件（一下子能抓住读者眼球） 解释事件因果，目的是解释主角身份背景（拉仇恨、博同情、制造氛围），接下来即将面临什么危机 主角怎么想">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-15T12:52:44.000Z">
-<meta property="article:modified_time" content="2024-08-16T02:03:21.302Z">
+<meta property="og:image" content="http://example.com/2024/08/15/2_1-%E5%B0%8F%E8%AF%B4%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%8B%89%E6%89%AF%E6%9C%9F%E5%BE%85%E6%84%9F.png">
+<meta property="article:published_time" content="2024-08-15T12:42:55.000Z">
+<meta property="article:modified_time" content="2024-08-17T11:56:49.515Z">
 <meta property="article:author" content="杜子源">
-<meta property="article:tag" content="CPU设计">
+<meta property="article:tag" content="小说推理思路">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2024/08/15/2_1-%E5%B0%8F%E8%AF%B4%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%8B%89%E6%89%AF%E6%9C%9F%E5%BE%85%E6%84%9F.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>1-用Chisel设计CPU各模块 - 旺仔杂货铺</title>
+  <title>1-小说组织架构 - 旺仔杂货铺</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -207,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="1-用Chisel设计CPU各模块"></span>
+            <span id="subtitle" data-typed-text="1-小说组织架构"></span>
           
         </div>
 
@@ -218,7 +220,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-15 20:52" pubdate>
+        <time datetime="2024-08-15 20:42" pubdate>
           2024年8月15日 晚上
         </time>
       </span>
@@ -230,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8 字
+          1.1k 字
         
       </span>
     
@@ -241,7 +243,7 @@
         
         
         
-          1 分钟
+          10 分钟
         
       </span>
     
@@ -278,12 +280,48 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">1-用Chisel设计CPU各模块</h1>
+            <h1 id="seo-header">1-小说组织架构</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-用Chisel设计各模块"><a href="#1-用Chisel设计各模块" class="headerlink" title="1. 用Chisel设计各模块"></a>1. 用Chisel设计各模块</h1>
+                <h1 id="小说推理架构思路"><a href="#小说推理架构思路" class="headerlink" title="小说推理架构思路"></a>小说推理架构思路</h1><p>从7月份开始构思小说，已经构思了一个月，但是还是没有很好的思路，为了防止自己内耗，我决定把自己平时拆书的心得分享给大家！本篇讲的是小说故事线的推理架构以及拆书，如何从各大榜单上找到有用的信息点。</p>
+<h2 id="1-开篇通用模板"><a href="#1-开篇通用模板" class="headerlink" title="1. 开篇通用模板"></a>1. 开篇通用模板</h2><p>网文的开篇小说的通用模板如下：</p>
+<blockquote>
+<ol>
+<li>切入事件（一下子能抓住读者眼球）</li>
+<li>解释事件因果，目的是解释主角身份背景（拉仇恨、博同情、制造氛围），接下来即将面临什么危机</li>
+<li>主角怎么想的，有什么策略（暗示主角与众不同，从而为主角获得金手指理所当然）</li>
+<li>主角不得不去做某一件事情，但是主角一筹莫展或者面临巨大的挑战</li>
+<li>主角获得金手指，问题变得可以解决（向读者暗示主角接下来可以实现脱困或者装逼打脸）</li>
+<li>反派登场施压，主角被打脸或者陷入危机，暗示金手指即将发挥作用</li>
+</ol>
+</blockquote>
+<p>需要注意的是，在开头切入事件的过程中，不要过多的铺设定，而是用配角或者环境来描述出来，而不是用上帝视角直接写出来。</p>
+<p>在断章的过程中，一般来说把故事的高潮刚展开就结束，这样就会有一个很好的钩子的效果。</p>
+<h2 id="2-如何把平淡的日常写的很有趣味性？"><a href="#2-如何把平淡的日常写的很有趣味性？" class="headerlink" title="2. 如何把平淡的日常写的很有趣味性？"></a>2. 如何把平淡的日常写的很有趣味性？</h2><p>在小说中，总是会遇到一些工具章节作为铺垫，那我们该怎么办呢？</p>
+<p>其实就是把故事尽量不要和盘托出，而是慢慢的来展开，给读者一点猜疑，但是又不是完全猜得到，让读者有一种优越感，或者是在文章中加一些小小的冲突（一句话就好）。</p>
+<p>如果说信息差是拉起期待感最简单的方法，那么设计误会就是拉起读者期待感最惯用的套路。</p>
+<p>如何实现让误会解除呢？——情绪价值</p>
+<p>给读者提供极大的情绪价值，明显让读者得到误会解除的满足感，吃瓜感。甚至在产生误会之前就要有一种产生不确定的情绪，之后再铺垫被误会，最终最终解除误会。</p>
+<p>例如：一方付出了代价，但是被另一方误会，并且做出了伤害或者忽视对方的行为。</p>
+<ol>
+<li>升级矛盾。</li>
+<li>情感共鸣</li>
+<li>给于希望（工具人给出解决问题的办法）</li>
+<li>希望受阻（由于主观&#x2F;客观原因无法达成希望）</li>
+</ol>
+<p>以上是如何让读者产生强烈的期待感，那么如何把这份情绪再最终落地呢？</p>
+<p>可以告诉读者某一件事情很难完成，但是又提供一种暗示，那么当未来这个事情发生的时候，读者就会有一种预料之感，但是又会觉得理所当然。</p>
+<p>例如：</p>
+<blockquote>
+<p>小红是一个高冷校花，张三是一个舔狗。（矛盾）<br>张三付出了很多，校花都没有理会。（升级矛盾）<br>张三好不容易修好了校花的自行车，但是校花却以为张三偷偷摸摸给她自行车搞破坏（情感共鸣）<br>张三没来得及开口解释，被李四拉走办别的事情，校花回家路上听到闺蜜说是张三修好的（给于希望）<br>校花太傲娇，还是不想对张三说一声谢谢（希望受阻，人设原因）<br>张三受伤，校花恰巧看到，关心张三（误会解除，但是又没完全解除）</p>
+</blockquote>
+<p>以上是我临时想出来的一个故事，虽然写的不是很好，但是基本能够写出了对于情绪的拉扯。</p>
+<p>我们可以套用这种<code>误会</code>的方式，来让读者产生一种期待感。</p>
+<p><img src="/2024/08/15/2_1-%E5%B0%8F%E8%AF%B4%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%8B%89%E6%89%AF%E6%9C%9F%E5%BE%85%E6%84%9F.png" srcset="/img/loading.gif" lazyload alt="拉扯期待感"></p>
+<p>这个图是B站一个很有名的UP主拆解的一篇小说，我们可以看到作者对于情绪的拉扯甚至不只有一次，而是交错复杂，这样子很能够让读者的心一蹦一蹦的。</p>
+
                 
               </div>
             
@@ -301,7 +339,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Chisel%E5%AE%9E%E6%88%98/" class="category-chain-item">Chisel实战</a>
+  <a href="/categories/%E5%B0%8F%E8%AF%B4%E6%8A%80%E5%B7%A7/" class="category-chain-item">小说技巧</a>
   
   
 
@@ -316,7 +354,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/" class="print-no-link">#CPU设计</a>
+        <a href="/tags/%E5%B0%8F%E8%AF%B4%E6%8E%A8%E7%90%86%E6%80%9D%E8%B7%AF/" class="print-no-link">#小说推理思路</a>
       
     </div>
   
@@ -328,8 +366,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1-用Chisel设计CPU各模块</div>
-      <div>http://example.com/2024/08/15/1-用Chisel设计CPU各模块/</div>
+      <div>1-小说组织架构</div>
+      <div>http://example.com/2024/08/15/2_1-小说结构设计/</div>
     </div>
     <div class="license-meta">
       
@@ -373,21 +411,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/15/2_2-%E5%B0%8F%E8%AF%B4%E6%89%AB%E6%A6%9C/" title="2-小说扫榜">
+                      <a href="/2024/08/15/1-%E7%94%A8Chisel%E8%AE%BE%E8%AE%A1CPU%E5%90%84%E6%A8%A1%E5%9D%97/" title="1-用Chisel设计CPU各模块">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2-小说扫榜</span>
+                        <span class="hidden-mobile">1-用Chisel设计CPU各模块</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2024/08/15/2_1-%E5%B0%8F%E8%AF%B4%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/" title="1-小说组织架构">
-                        <span class="hidden-mobile">1-小说组织架构</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
