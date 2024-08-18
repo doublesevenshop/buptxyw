@@ -8,7 +8,7 @@
     <link href="/2024/08/18/3-1-ubuntu%E7%BE%8E%E5%8C%96%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     <url>/2024/08/18/3-1-ubuntu%E7%BE%8E%E5%8C%96%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
     
-    <content type="html"><![CDATA[<h1 id="Ubuntu桌面美化"><a href="#Ubuntu桌面美化" class="headerlink" title="Ubuntu桌面美化"></a>Ubuntu桌面美化</h1><p>刚刚安装好Ubuntu，第一件事就是看看能不能美美的配置一下桌面环境，我在这里使用的是Gnome来进行配置。</p><p>首先我们需要安装GNOME Tweaks Tool<br>可以参考这个博客：<br><a href="https://blog.csdn.net/qq_35395195/article/details/125266461">Ubuntu桌面美化教程</a></p><p>但是我们发现有时候在Gnome的配置中会找不到所在的扩展，这个时候可以参考这个博客来解决：<a href="https://blog.csdn.net/ksws0292756/article/details/79936965">Ubuntu桌面环境找不到extension插件选项</a></p><p>安装好这两个之后，我们便可以下载诸多插件，同时安装相应的环境。</p><p>在准备好上述条件之后，我们可以选择许多现成的主题来更换，可以参考这个博客：<a href="https://blog.csdn.net/Simon55968/article/details/108921265">Ubuntu更换主题美化教程</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Ubuntu桌面美化"><a href="#Ubuntu桌面美化" class="headerlink" title="Ubuntu桌面美化"></a>Ubuntu桌面美化</h1><p>刚刚安装好Ubuntu，第一件事就是看看能不能美美的配置一下桌面环境，我在这里使用的是Gnome来进行配置。</p><p>首先我们需要安装GNOME Tweaks Tool<br>可以参考这个博客：<br><a href="https://blog.csdn.net/qq_35395195/article/details/125266461">Ubuntu桌面美化教程</a></p><p>但是我们发现有时候在Gnome的配置中会找不到所在的扩展，这个时候可以参考这个博客来解决：<a href="https://blog.csdn.net/ksws0292756/article/details/79936965">Ubuntu桌面环境找不到extension插件选项</a></p><p>安装好这两个之后，我们便可以下载诸多插件，同时安装相应的环境。</p><p>在准备好上述条件之后，我们可以选择许多现成的主题来更换，可以参考这个博客：<a href="https://blog.csdn.net/Simon55968/article/details/108921265">Ubuntu更换主题美化教程</a></p><p>至此我们便可以进行简单的主题配置，更多内容大家可以自行查阅。</p>]]></content>
     
     
     <categories>
