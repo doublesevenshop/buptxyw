@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>1_5-存算一体经典文章精读</title>
+    <link href="/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/"/>
+    <url>/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>论文系列</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>存算一体 精读</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>3_3-Beamer学习记录</title>
     <link href="/2024/08/24/3-3-Beamer%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     <url>/2024/08/24/3-3-Beamer%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
@@ -233,7 +258,7 @@
     <link href="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/"/>
     <url>/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/</url>
     
-    <content type="html"><![CDATA[<h1 id="存算一体"><a href="#存算一体" class="headerlink" title="存算一体"></a>存算一体</h1><h2 id="1-存算一体的概念"><a href="#1-存算一体的概念" class="headerlink" title="1. 存算一体的概念"></a>1. 存算一体的概念</h2><p>除了FPGA，这也是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。</p><p>首先我们要了解什么是存算一体(Computing in Memory)。</p><p>存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一</p><ul><li>Processing-in-memory(PIM)</li><li>Computing-in-memory(CIM)</li><li>In-memory processing(IMP)</li><li>In-memory computing(IMC)</li><li>Logic-in-memory(LIM)</li><li>Near-data computing(NDC)</li><li>Near-data processing(NDP)</li><li>Near-memory computing(NMC)</li><li>Near-memory processing(NMP)</li></ul><p>存算一体是在存储器中嵌入计算能力，用新的运算架构来进行二维和三维矩阵乘法&#x2F;加法运算。存算一体这一技术概念，最早可以追溯到上个世纪70年代，近几年随着云计算和AI的迅速发展，面对各种数据洪流，数据迁移成为了一个非常大的问题，也就是IO瓶颈。</p><p>计算性能的提升速率远高于内存性能的提升，结果长期下来，存储速度严重滞后于运算速度，因此我们发明了各种软硬件方法来提升IO速率，例如缓存，又分为二级缓存，三级缓存等等。</p><p>在传统的冯诺依曼架构中，存储是为计算服务的，因此会天然的把运算和存储进行分离。但是如今存储和计算不得不一起考虑。</p><p>以下这篇博客希望大家可以看一下，里边讲了很多存算一体的基本概念：</p><ul><li><a href="https://www.eet-china.com/mp/a195588.html">1.存算一体的发展史、优势、应用方向、主要介质</a></li><li><a href="https://people.inf.ethz.ch/omutlu/pub/onur-Dagstuhl-PIM-Security-28-November-2023.pdf">2.PIM基本扫盲</a></li></ul><p>存算一体是一种以数据为中心的计算模式，数据在哪，计算就在哪。<br><strong>相比较冯诺依曼架构的优势</strong>：</p><ul><li>缩短访存路径，降低仿存延迟</li><li>缩短访存路径，降低访存能耗</li><li>存储器内部访存带宽高</li><li>在存储阵列上原位执行计算，并行度高</li></ul><h2 id="2-存算一体分类"><a href="#2-存算一体分类" class="headerlink" title="2. 存算一体分类"></a>2. 存算一体分类</h2><p>目前，存算一体的技术路径尚未形成统一的分类，目前主流的划分方法是依照计算单元与存储单元的距离，将其大致分为</p><ol><li>近存计算（PNM）</li><li>存内处理（PIM）</li><li>存内计算（CIM）。</li></ol><p><strong>近存计算</strong> 是一种较为成熟的技术路径。它利用先进的封装技术，将计算逻辑芯片和存储器封装到一起，通过减少内存和处理单元之间的路径，实现高I&#x2F;O密度，进而实现高内存带宽以及较低的访问开销。近存计算主要通过2.5D、3D堆叠等技术来实现，广泛应用于各类CPU和GPU上。 </p><p><strong>存内处理</strong> 则主要侧重于将计算过程尽可能地嵌入到存储器内部。这种实现方式旨在减少处理器访问存储器的频率，因为大部分计算已经在存储器内部完成。这种设计有助于消除冯·诺依曼瓶颈带来的问题，提高数据处理速度和效率。 </p><p><strong>存内计算</strong> 同样是将计算和存储合二为一的技术。它有两种主要思路。第一种思路是通过电路革新，让存储器本身就具有计算能力。这通常需要对SRAM或者MRAM等存储器进行改动，以在数据读出的decoder等地方实现计算功能。这种方法的能效比通常较高，但计算精度可能受限。 </p><p>另一种思路是在存储器内部集成额外的计算单元，以支持高精度计算。这种思路主要针对DRAM等主处理器访问开销大的存储器，但DRAM工艺对计算逻辑电路不太友好，因此集成计算单元的挑战较大。 </p><p>目前存内计算的方式较为单一，多数集中在利用非易失性存储阵列（忆阻器）实现原位的信号模拟矩阵向量乘。同样也可以用于易失性存储器（SRAM）和数字模式存内计算。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="存算一体"><a href="#存算一体" class="headerlink" title="存算一体"></a>存算一体</h1><h2 id="1-存算一体的概念"><a href="#1-存算一体的概念" class="headerlink" title="1. 存算一体的概念"></a>1. 存算一体的概念</h2><p>除了FPGA，这也是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。</p><p>首先我们要了解什么是存算一体(Computing in Memory)。</p><p>存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一</p><ul><li>Processing-in-memory(PIM)</li><li>Computing-in-memory(CIM)</li><li>In-memory processing(IMP)</li><li>In-memory computing(IMC)</li><li>Logic-in-memory(LIM)</li><li>Near-data computing(NDC)</li><li>Near-data processing(NDP)</li><li>Near-memory computing(NMC)</li><li>Near-memory processing(NMP)</li></ul><p>存算一体是在存储器中嵌入计算能力，用新的运算架构来进行二维和三维矩阵乘法&#x2F;加法运算。存算一体这一技术概念，最早可以追溯到上个世纪70年代，近几年随着云计算和AI的迅速发展，面对各种数据洪流，数据迁移成为了一个非常大的问题，也就是IO瓶颈。</p><p>计算性能的提升速率远高于内存性能的提升，结果长期下来，存储速度严重滞后于运算速度，因此我们发明了各种软硬件方法来提升IO速率，例如缓存，又分为二级缓存，三级缓存等等。</p><p>在传统的冯诺依曼架构中，存储是为计算服务的，因此会天然的把运算和存储进行分离。但是如今存储和计算不得不一起考虑。</p><p>以下这篇博客希望大家可以看一下，里边讲了很多存算一体的基本概念：</p><ul><li><a href="https://www.eet-china.com/mp/a195588.html">1.存算一体的发展史、优势、应用方向、主要介质</a></li><li><a href="https://people.inf.ethz.ch/omutlu/pub/onur-Dagstuhl-PIM-Security-28-November-2023.pdf">2.PIM基本扫盲</a></li></ul><p>存算一体是一种以数据为中心的计算模式，数据在哪，计算就在哪。<br><strong>相比较冯诺依曼架构的优势</strong>：</p><ul><li>缩短访存路径，降低仿存延迟</li><li>缩短访存路径，降低访存能耗</li><li>存储器内部访存带宽高</li><li>在存储阵列上原位执行计算，并行度高</li></ul><h2 id="2-存算一体分类"><a href="#2-存算一体分类" class="headerlink" title="2. 存算一体分类"></a>2. 存算一体分类</h2><p>目前，存算一体的技术路径尚未形成统一的分类，目前主流的划分方法是依照计算单元与存储单元的距离，将其大致分为</p><ol><li>近存计算（PNM）</li><li>存内处理（PIM）</li><li>存内计算（CIM）。</li></ol><p><strong>近存计算</strong> 是一种较为成熟的技术路径。它利用先进的封装技术，将计算逻辑芯片和存储器封装到一起，通过减少内存和处理单元之间的路径，实现高I&#x2F;O密度，进而实现高内存带宽以及较低的访问开销。近存计算主要通过2.5D、3D堆叠等技术来实现，广泛应用于各类CPU和GPU上。 </p><p><strong>存内处理</strong> 则主要侧重于将计算过程尽可能地嵌入到存储器内部。这种实现方式旨在减少处理器访问存储器的频率，因为大部分计算已经在存储器内部完成。这种设计有助于消除冯·诺依曼瓶颈带来的问题，提高数据处理速度和效率。 </p><p><strong>存内计算</strong> 同样是将计算和存储合二为一的技术。它有两种主要思路。第一种思路是通过电路革新，让存储器本身就具有计算能力。这通常需要对SRAM或者MRAM等存储器进行改动，以在数据读出的decoder等地方实现计算功能。这种方法的能效比通常较高，但计算精度可能受限。 </p><p>另一种思路是在存储器内部集成额外的计算单元，以支持高精度计算。这种思路主要针对DRAM等主处理器访问开销大的存储器，但DRAM工艺对计算逻辑电路不太友好，因此集成计算单元的挑战较大。 </p><p>目前存内计算的方式较为单一，多数集中在利用非易失性存储阵列（忆阻器）实现原位的信号模拟矩阵向量乘。同样也可以用于易失性存储器（SRAM）和数字模式存内计算。</p><h2 id="3-存算一体论文阅读心得"><a href="#3-存算一体论文阅读心得" class="headerlink" title="3. 存算一体论文阅读心得"></a>3. 存算一体论文阅读心得</h2><ol start="0"><li><p><a href="https://www.mdpi.com/2504-4990/1/1/5">存算一体经典文章：A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</a></p></li><li><p><a href="https://www.frontiersin.org/journals/electronics/articles/10.3389/felec.2022.898273/full">AI-PiM-Extending the RISC-V process with Processing-in-Memory functional units for AI inference at the edge of IoT</a></p></li></ol>]]></content>
     
     
     <categories>
