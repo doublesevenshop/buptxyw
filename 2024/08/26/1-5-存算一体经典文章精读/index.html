@@ -16,16 +16,16 @@
   <meta name="author" content="杜子源">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 经典文章 A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks   词条1：ReRAM,它的优势是：高密度低能量存储以及存内计算&#x2F;搜索引擎。  在这篇文章中主要介绍基于ReRAM的PIM和NN架构。 ReRAM可以支持模拟矩阵向量乘法，并且可以在内存中进行位操作和查询。在">
+    <meta name="description" content="1. PRIME: A Novel Processing-in-memory Architecture for Neural Network Computation in ReRAM-based Main Memory 团队：清华大学谢源  1.1. 摘要PIM能够很好地解决内存墙的问题，ReRAM作为元器件，ReRAM凭借其crossbar array structure，在存算一体方面拥有很强">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1_5-存算一体经典文章精读">
 <meta property="og:url" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/index.html">
 <meta property="og:site_name" content="旺仔杂货铺">
-<meta property="og:description" content="1. 经典文章 A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks   词条1：ReRAM,它的优势是：高密度低能量存储以及存内计算&#x2F;搜索引擎。  在这篇文章中主要介绍基于ReRAM的PIM和NN架构。 ReRAM可以支持模拟矩阵向量乘法，并且可以在内存中进行位操作和查询。在">
+<meta property="og:description" content="1. PRIME: A Novel Processing-in-memory Architecture for Neural Network Computation in ReRAM-based Main Memory 团队：清华大学谢源  1.1. 摘要PIM能够很好地解决内存墙的问题，ReRAM作为元器件，ReRAM凭借其crossbar array structure，在存算一体方面拥有很强">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png">
 <meta property="article:published_time" content="2024-08-25T16:04:06.000Z">
-<meta property="article:modified_time" content="2024-08-27T08:59:52.433Z">
+<meta property="article:modified_time" content="2024-08-27T11:55:23.348Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体 精读">
 <meta name="twitter:card" content="summary_large_image">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          289 字
+          517 字
         
       </span>
     
@@ -243,7 +243,7 @@
         
         
         
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -285,7 +285,12 @@
             
               <div class="markdown-body">
                 
-                <h1 id="1-经典文章"><a href="#1-经典文章" class="headerlink" title="1. 经典文章"></a>1. 经典文章</h1><ol>
+                <h1 id="1-PRIME-A-Novel-Processing-in-memory-Architecture-for-Neural-Network-Computation-in-ReRAM-based-Main-Memory"><a href="#1-PRIME-A-Novel-Processing-in-memory-Architecture-for-Neural-Network-Computation-in-ReRAM-based-Main-Memory" class="headerlink" title="1. PRIME: A Novel Processing-in-memory Architecture for Neural Network Computation in ReRAM-based Main Memory"></a>1. PRIME: A Novel Processing-in-memory Architecture for Neural Network Computation in ReRAM-based Main Memory</h1><blockquote>
+<p>团队：清华大学谢源</p>
+</blockquote>
+<h2 id="1-1-摘要"><a href="#1-1-摘要" class="headerlink" title="1.1. 摘要"></a>1.1. 摘要</h2><p>PIM能够很好地解决<strong>内存墙</strong>的问题，ReRAM作为元器件，ReRAM凭借其<code>crossbar array structure</code>，在存算一体方面拥有很强的前景。本文提出了一种架构级别的创新：使得Memory具有计算功能。文章提出的新型存算融合架构叫做<strong>PRIME</strong>，不仅提供了微架构和电路设计，并且提供了软硬件接口来实现各种NN。性能提升有2000多倍，能耗比提升有800多倍(本人对于测量方法存疑)</p>
+<h2 id="1-2-Intro"><a href="#1-2-Intro" class="headerlink" title="1.2. Intro"></a>1.2. Intro</h2><p>传统的电脑采用计算和存储分离架构，CPU和GPU作为计算单元，Memory、Flash、Disks作为存储介质。随着AI的发展，内存墙的问题越来越严重。例如CPU和内存之间的IO的耗能比执行浮点操作高两个数量级。</p>
+<h1 id="2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks"><a href="#2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks" class="headerlink" title="2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks"></a>2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</h1><ol>
 <li>A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</li>
 </ol>
 <blockquote>

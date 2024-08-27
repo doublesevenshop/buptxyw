@@ -28,8 +28,9 @@
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%BB%93%E6%9E%84.png">
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png">
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E8%BF%90%E7%AE%97%E6%96%B9%E5%BC%8F.png">
+<meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%90%B4%E5%8D%8E%E5%BC%BA%E5%9B%A2%E9%98%9F%E8%AE%BA%E6%96%87.png">
 <meta property="article:published_time" content="2024-08-17T12:00:40.000Z">
-<meta property="article:modified_time" content="2024-08-27T09:00:54.958Z">
+<meta property="article:modified_time" content="2024-08-27T11:36:51.328Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体">
 <meta name="twitter:card" content="summary_large_image">
@@ -236,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          2k 字
         
       </span>
     
@@ -247,7 +248,7 @@
         
         
         
-          13 分钟
+          17 分钟
         
       </span>
     
@@ -293,7 +294,15 @@
 <p>首先我们要了解什么是存算一体(Computing in Memory)。</p>
 <p>存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一</p>
 <figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">Processing</span>-<span class="hljs-variable"><span class="hljs-keyword">in</span></span>-<span class="hljs-function"><span class="hljs-title">memory</span>(<span class="hljs-variable">PIM</span>)</span><br><span class="hljs-variable">Computing</span>-<span class="hljs-variable"><span class="hljs-keyword">in</span></span>-<span class="hljs-function"><span class="hljs-title">memory</span>(<span class="hljs-variable">CIM</span>)</span><br><span class="hljs-variable"><span class="hljs-keyword">In</span></span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">processing</span>(<span class="hljs-variable">IMP</span>)</span><br><span class="hljs-variable"><span class="hljs-keyword">In</span></span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">computing</span>(<span class="hljs-variable">IMC</span>)</span><br><span class="hljs-variable">Logic</span>-<span class="hljs-variable"><span class="hljs-keyword">in</span></span>-<span class="hljs-function"><span class="hljs-title">memory</span>(<span class="hljs-variable">LIM</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">data</span> <span class="hljs-function"><span class="hljs-title">computing</span>(<span class="hljs-variable">NDC</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">data</span> <span class="hljs-function"><span class="hljs-title">processing</span>(<span class="hljs-variable">NDP</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">computing</span>(<span class="hljs-variable">NMC</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">processing</span>(<span class="hljs-variable">NMP</span>)</span><br></code></pre></td></tr></table></figure>
-
+<ol>
+<li><p><strong>近存计算PNM</strong><br>近存计算，本质上仍然是存算分离架构，计算操作仍然由独立的计算单元完成。只不过该架构能够通过存储上移或者计算的方式，让数据更加接近计算单元，从而缩小数据移动的延迟和功耗。<strong>特斯拉、达摩院、三星</strong>等选择的便是近存计算。</p>
+</li>
+<li><p><strong>存内处理PIM</strong><br>存内处理，本质上仍然是存算分离，不过相较于近存计算，存和算的距离更近，计算单元内嵌于存储芯片内，但是他们还是各干个的。国内<strong>知存科技</strong>选择的便是存内处理。</p>
+</li>
+<li><p><strong>存内计算CIM</strong><br>存内计算是真正的狭义上的存算一体，在这个框架下，存储和计算完全融合，没有独立的计算单元，直接在存储器颗粒上嵌入算法，由存储器芯片内部的存储单元完成计算操作。这也是大部分初创公司所说的存算一体。</p>
+</li>
+</ol>
+<p>经过研究发现，大公司和初创公司的思路为：传统芯片大厂几乎都在布局PNM；而初创公司都在押注PIM。</p>
 <p>存算一体是在存储器中嵌入计算能力，用新的运算架构来进行二维和三维矩阵乘法&#x2F;加法运算。存算一体这一技术概念，最早可以追溯到上个世纪70年代，近几年随着云计算和AI的迅速发展，面对各种数据洪流，数据迁移成为了一个非常大的问题，也就是IO瓶颈。</p>
 <p>计算性能的提升速率远高于内存性能的提升，结果长期下来，存储速度严重滞后于运算速度，因此我们发明了各种软硬件方法来提升IO速率，例如缓存，又分为二级缓存，三级缓存等等。</p>
 <p>在传统的冯诺依曼架构中，存储是为计算服务的，因此会天然的把运算和存储进行分离。但是如今存储和计算不得不一起考虑。</p>
@@ -315,10 +324,10 @@
 <p>忆阻器最初是由一片双层的二氧化钛薄膜所成，当电流流过时，其电阻值就会发生改变。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%BB%93%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="忆阻器结构"></p>
 <p>理想的人工突触器件应该具有以下性质：</p>
 <blockquote>
-<p>具有非易失的突触权重<br>具有突触可塑性<br>突触权重能够通过学习从而发生改变<br>纳米级尺寸<br>低功耗<br>易于大规模互连集成。<br>忆阻器满足了上述的所有条件。</p>
+<p>具有非易失的突触权重<br>具有突触可塑性<br>突触权重能够通过学习从而发生改变<br>纳米级尺寸<br>低功耗、高并行<br>易于大规模互连集成。<br>忆阻器满足了上述的所有条件。</p>
 </blockquote>
 <p>AI中存在着大量的矩阵运算，例如矩阵乘以向量。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png" srcset="/img/loading.gif" lazyload alt="矩阵运算"></p>
-<p>传统的思路是，每一个节点都需要运算器来计算一遍，那么忆阻器是如何实现的呢？<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E8%BF%90%E7%AE%97%E6%96%B9%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="忆阻器运算方式"><br>根据基尔霍夫定律，每一个节点的电流可以直接进行相加，之后在横向的一侧进行测量，便可以直接得到运算结果。</p>
+<p>传统的思路是，每一个节点都需要运算器来计算一遍，那么忆阻器是如何实现的呢？<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E8%BF%90%E7%AE%97%E6%96%B9%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="忆阻器运算方式"><br>根据基尔霍夫定律做加法，基于欧姆定律做乘法，每一个节点的电流可以直接进行相加，之后在横向的一侧进行测量，便可以直接得到运算结果。</p>
 <p>我们相当于一次性就可以完成这个矩阵乘以向量的计算，效率大大的。</p>
 <p>那么现在我们想，这个模型会遇到什么问题？</p>
 <blockquote>
@@ -328,6 +337,13 @@
 <li>模拟计算本身的误差该如何消除？<br>…</li>
 </ol>
 </blockquote>
+<p>2017年，清华吴华强团队用一个128*8的阵列实现了人脸识别，追求的是系统的准确率，而不是单个器件的准确率。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%90%B4%E5%8D%8E%E5%BC%BA%E5%9B%A2%E9%98%9F%E8%AE%BA%E6%96%87.png" srcset="/img/loading.gif" lazyload alt="吴华强团队论文"></p>
+<p>在参考1中讲到了<strong>忆阻器件的发展</strong>、<strong>忆阻器阵列存算一体演示</strong>等等，推荐大家去观看。</p>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1LG411H7is/?buvid=XX3C9BA3386CD802BC14CED078E9A0D60F26D&from_spmid=main.my-history.0.0&is_story_h5=false&mid=pMgQaVLqvEPCkFqgoxvUgg==&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=32ff03b9-661b-465b-b665-741105e93b92&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1724726791&unique_k=VPj9rFt&up_id=4299350&vd_source=98101c1de7471be746ee7086e136f38f">B站：基于忆阻器的存算一体架构</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nN411g7HC/?spm_id_from=333.337.search-card.all.click">B站：忆阻器芯片到底是什么？</a></li>
+</ol>
 <h2 id="3-存算一体分类"><a href="#3-存算一体分类" class="headerlink" title="3. 存算一体分类"></a>3. 存算一体分类</h2><p>目前，存算一体的技术路径尚未形成统一的分类，目前主流的划分方法是依照计算单元与存储单元的距离，将其大致分为</p>
 <ol>
 <li>近存计算（PNM）</li>
@@ -339,7 +355,7 @@
 <p><strong>存内计算</strong> 同样是将计算和存储合二为一的技术。它有两种主要思路。第一种思路是通过电路革新，让存储器本身就具有计算能力。这通常需要对SRAM或者MRAM等存储器进行改动，以在数据读出的decoder等地方实现计算功能。这种方法的能效比通常较高，但计算精度可能受限。 </p>
 <p>另一种思路是在存储器内部集成额外的计算单元，以支持高精度计算。这种思路主要针对DRAM等主处理器访问开销大的存储器，但DRAM工艺对计算逻辑电路不太友好，因此集成计算单元的挑战较大。 </p>
 <p>目前存内计算的方式较为单一，多数集中在利用非易失性存储阵列（忆阻器）实现原位的信号模拟矩阵向量乘。同样也可以用于易失性存储器（SRAM）和数字模式存内计算。</p>
-<h2 id="3-存算一体论文阅读心得"><a href="#3-存算一体论文阅读心得" class="headerlink" title="3. 存算一体论文阅读心得"></a>3. 存算一体论文阅读心得</h2><p><a target="_blank" rel="noopener" href="http://localhost:4000/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/">文章精读系列</a></p>
+<h2 id="4-存算一体论文阅读心得"><a href="#4-存算一体论文阅读心得" class="headerlink" title="4. 存算一体论文阅读心得"></a>4. 存算一体论文阅读心得</h2><p><a target="_blank" rel="noopener" href="https://doublesevenshop.github.io/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/">文章精读系列</a></p>
 
                 
               </div>
