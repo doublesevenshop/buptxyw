@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/PRIME%E6%9E%B6%E6%9E%84%E5%AF%B9%E6%AF%94%E5%9B%BE.png">
 <meta property="og:image" content="http://example.com/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png">
 <meta property="article:published_time" content="2024-08-25T16:04:06.000Z">
-<meta property="article:modified_time" content="2024-08-27T14:11:33.209Z">
+<meta property="article:modified_time" content="2024-08-27T14:16:46.709Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体 精读">
 <meta name="twitter:card" content="summary_large_image">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.5k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          11 分钟
+          13 分钟
         
       </span>
     
@@ -320,6 +320,12 @@
 <p>而ReRAM可以很好的做到这一点，有很多独立加速器、协处理器、多核或者NoC架构都在使用ReRAM。例如ISAAC是一种基于ReRAM的充分训练过的神经网络加速器。</p>
 <h3 id="PIM"><a href="#PIM" class="headerlink" title="PIM"></a>PIM</h3><p>PIM参考上一篇博客。</p>
 <h2 id="1-4-PRIME-Architecture"><a href="#1-4-PRIME-Architecture" class="headerlink" title="1.4. PRIME Architecture"></a>1.4. PRIME Architecture</h2><p><img src="/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/PRIME%E6%9E%B6%E6%9E%84%E5%AF%B9%E6%AF%94%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="PRIME架构对比图"></p>
+<p>如下图，a&#x2F;b方案是传统加速器方案，构造多个处理单元与CPU协同工作，类似于近存计算，存储部分和process unit是分离的，通过数据总线进行数据address。而PRIME架构的存储单元和乘加计算单元是一体的，只需要CPU传来控制信号和地址信号，即可在memory array上完成权重存取和对输入的乘加运算。PRIME的bank划分为三个region：</p>
+<ul>
+<li><strong>Memory subarrays</strong>：只有数据存储的能力，和传统内存一样</li>
+<li><strong>Full Function subarrays</strong>：具有存储和计算能力两种模式，有一个控制器来控制计算和重配置。</li>
+<li><strong>Buffer subarrays</strong>：为FF做数据服务，通过私有的数据端口来进行连接，因此数据传输不再消耗带宽。</li>
+</ul>
 <h1 id="2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks"><a href="#2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks" class="headerlink" title="2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks"></a>2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</h1><ol>
 <li>A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</li>
 </ol>
