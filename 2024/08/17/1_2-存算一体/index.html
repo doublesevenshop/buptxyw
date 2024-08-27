@@ -16,18 +16,20 @@
   <meta name="author" content="杜子源">
   <meta name="keywords" content="">
   
-    <meta name="description" content="存算一体1. 存算一体的概念除了FPGA，这也是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一  Processing-in-memory(PIM) Computing-in-mem">
+    <meta name="description" content="存算一体1. 存算一体的概念除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一  Processing-in-memory(PIM) Computing-in-m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="存算一体">
 <meta property="og:url" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/index.html">
 <meta property="og:site_name" content="旺仔杂货铺">
-<meta property="og:description" content="存算一体1. 存算一体的概念除了FPGA，这也是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一  Processing-in-memory(PIM) Computing-in-mem">
+<meta property="og:description" content="存算一体1. 存算一体的概念除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一  Processing-in-memory(PIM) Computing-in-m">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png">
 <meta property="article:published_time" content="2024-08-17T12:00:40.000Z">
-<meta property="article:modified_time" content="2024-08-25T16:03:10.349Z">
+<meta property="article:modified_time" content="2024-08-27T08:40:10.650Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -283,7 +285,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="存算一体"><a href="#存算一体" class="headerlink" title="存算一体"></a>存算一体</h1><h2 id="1-存算一体的概念"><a href="#1-存算一体的概念" class="headerlink" title="1. 存算一体的概念"></a>1. 存算一体的概念</h2><p>除了FPGA，这也是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。</p>
+                <h1 id="存算一体"><a href="#存算一体" class="headerlink" title="存算一体"></a>存算一体</h1><h2 id="1-存算一体的概念"><a href="#1-存算一体的概念" class="headerlink" title="1. 存算一体的概念"></a>1. 存算一体的概念</h2><p>除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。</p>
 <p>首先我们要了解什么是存算一体(Computing in Memory)。</p>
 <p>存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一</p>
 <ul>
@@ -300,6 +302,8 @@
 <p>存算一体是在存储器中嵌入计算能力，用新的运算架构来进行二维和三维矩阵乘法&#x2F;加法运算。存算一体这一技术概念，最早可以追溯到上个世纪70年代，近几年随着云计算和AI的迅速发展，面对各种数据洪流，数据迁移成为了一个非常大的问题，也就是IO瓶颈。</p>
 <p>计算性能的提升速率远高于内存性能的提升，结果长期下来，存储速度严重滞后于运算速度，因此我们发明了各种软硬件方法来提升IO速率，例如缓存，又分为二级缓存，三级缓存等等。</p>
 <p>在传统的冯诺依曼架构中，存储是为计算服务的，因此会天然的把运算和存储进行分离。但是如今存储和计算不得不一起考虑。</p>
+<p>忆阻器便是在存算一体中的一个重要器件，1971年美籍华人蔡少棠在论文中预言了忆阻器的存在。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png" srcset="/img/loading.gif" lazyload alt="忆阻器的预言"></p>
+<p>在电路中有四个基本变量，电流、电压、电荷、磁通量，</p>
 <p>以下这篇博客希望大家可以看一下，里边讲了很多存算一体的基本概念：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.eet-china.com/mp/a195588.html">1.存算一体的发展史、优势、应用方向、主要介质</a></li>
@@ -323,12 +327,7 @@
 <p><strong>存内计算</strong> 同样是将计算和存储合二为一的技术。它有两种主要思路。第一种思路是通过电路革新，让存储器本身就具有计算能力。这通常需要对SRAM或者MRAM等存储器进行改动，以在数据读出的decoder等地方实现计算功能。这种方法的能效比通常较高，但计算精度可能受限。 </p>
 <p>另一种思路是在存储器内部集成额外的计算单元，以支持高精度计算。这种思路主要针对DRAM等主处理器访问开销大的存储器，但DRAM工艺对计算逻辑电路不太友好，因此集成计算单元的挑战较大。 </p>
 <p>目前存内计算的方式较为单一，多数集中在利用非易失性存储阵列（忆阻器）实现原位的信号模拟矩阵向量乘。同样也可以用于易失性存储器（SRAM）和数字模式存内计算。</p>
-<h2 id="3-存算一体论文阅读心得"><a href="#3-存算一体论文阅读心得" class="headerlink" title="3. 存算一体论文阅读心得"></a>3. 存算一体论文阅读心得</h2><ol start="0">
-<li><p><a target="_blank" rel="noopener" href="https://www.mdpi.com/2504-4990/1/1/5">存算一体经典文章：A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.frontiersin.org/journals/electronics/articles/10.3389/felec.2022.898273/full">AI-PiM-Extending the RISC-V process with Processing-in-Memory functional units for AI inference at the edge of IoT</a></p>
-</li>
-</ol>
+<h2 id="3-存算一体论文阅读心得"><a href="#3-存算一体论文阅读心得" class="headerlink" title="3. 存算一体论文阅读心得"></a>3. 存算一体论文阅读心得</h2><p><a target="_blank" rel="noopener" href="http://localhost:4000/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/">文章精读系列</a></p>
 
                 
               </div>
