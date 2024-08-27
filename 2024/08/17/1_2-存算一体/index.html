@@ -16,12 +16,12 @@
   <meta name="author" content="杜子源">
   <meta name="keywords" content="">
   
-    <meta name="description" content="存算一体1. 存算一体的概念除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一  Processing-in-memory(PIM) Computing-in-m">
+    <meta name="description" content="存算一体1. 存算一体的概念除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一 123456789Processing-in-memory(PIM)Computi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="存算一体">
 <meta property="og:url" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/index.html">
 <meta property="og:site_name" content="旺仔杂货铺">
-<meta property="og:description" content="存算一体1. 存算一体的概念除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一  Processing-in-memory(PIM) Computing-in-m">
+<meta property="og:description" content="存算一体1. 存算一体的概念除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。 首先我们要了解什么是存算一体(Computing in Memory)。 存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一 123456789Processing-in-memory(PIM)Computi">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png">
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E5%88%B6%E9%80%A0.png">
@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png">
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E8%BF%90%E7%AE%97%E6%96%B9%E5%BC%8F.png">
 <meta property="article:published_time" content="2024-08-17T12:00:40.000Z">
-<meta property="article:modified_time" content="2024-08-27T08:59:38.799Z">
+<meta property="article:modified_time" content="2024-08-27T09:00:54.958Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体">
 <meta name="twitter:card" content="summary_large_image">
@@ -292,17 +292,8 @@
                 <h1 id="存算一体"><a href="#存算一体" class="headerlink" title="存算一体"></a>存算一体</h1><h2 id="1-存算一体的概念"><a href="#1-存算一体的概念" class="headerlink" title="1. 存算一体的概念"></a>1. 存算一体的概念</h2><p>除了FPGA，存算一体是一个很新的非冯诺依曼架构，那我们该从哪里开始去看存算一体，或者从哪个地方入门，这篇博客对经典的存算一体进行了汇总。</p>
 <p>首先我们要了解什么是存算一体(Computing in Memory)。</p>
 <p>存算一体的名称，分类在业界没有统一，不同的人有不同的叫法，英文名称也不统一</p>
-<ul>
-<li>Processing-in-memory(PIM)</li>
-<li>Computing-in-memory(CIM)</li>
-<li>In-memory processing(IMP)</li>
-<li>In-memory computing(IMC)</li>
-<li>Logic-in-memory(LIM)</li>
-<li>Near-data computing(NDC)</li>
-<li>Near-data processing(NDP)</li>
-<li>Near-memory computing(NMC)</li>
-<li>Near-memory processing(NMP)</li>
-</ul>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">Processing</span>-<span class="hljs-variable"><span class="hljs-keyword">in</span></span>-<span class="hljs-function"><span class="hljs-title">memory</span>(<span class="hljs-variable">PIM</span>)</span><br><span class="hljs-variable">Computing</span>-<span class="hljs-variable"><span class="hljs-keyword">in</span></span>-<span class="hljs-function"><span class="hljs-title">memory</span>(<span class="hljs-variable">CIM</span>)</span><br><span class="hljs-variable"><span class="hljs-keyword">In</span></span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">processing</span>(<span class="hljs-variable">IMP</span>)</span><br><span class="hljs-variable"><span class="hljs-keyword">In</span></span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">computing</span>(<span class="hljs-variable">IMC</span>)</span><br><span class="hljs-variable">Logic</span>-<span class="hljs-variable"><span class="hljs-keyword">in</span></span>-<span class="hljs-function"><span class="hljs-title">memory</span>(<span class="hljs-variable">LIM</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">data</span> <span class="hljs-function"><span class="hljs-title">computing</span>(<span class="hljs-variable">NDC</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">data</span> <span class="hljs-function"><span class="hljs-title">processing</span>(<span class="hljs-variable">NDP</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">computing</span>(<span class="hljs-variable">NMC</span>)</span><br><span class="hljs-variable">Near</span>-<span class="hljs-variable">memory</span> <span class="hljs-function"><span class="hljs-title">processing</span>(<span class="hljs-variable">NMP</span>)</span><br></code></pre></td></tr></table></figure>
+
 <p>存算一体是在存储器中嵌入计算能力，用新的运算架构来进行二维和三维矩阵乘法&#x2F;加法运算。存算一体这一技术概念，最早可以追溯到上个世纪70年代，近几年随着云计算和AI的迅速发展，面对各种数据洪流，数据迁移成为了一个非常大的问题，也就是IO瓶颈。</p>
 <p>计算性能的提升速率远高于内存性能的提升，结果长期下来，存储速度严重滞后于运算速度，因此我们发明了各种软硬件方法来提升IO速率，例如缓存，又分为二级缓存，三级缓存等等。</p>
 <p>在传统的冯诺依曼架构中，存储是为计算服务的，因此会天然的把运算和存储进行分离。但是如今存储和计算不得不一起考虑。</p>
