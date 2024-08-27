@@ -25,8 +25,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png">
 <meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E5%88%B6%E9%80%A0.png">
+<meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png">
+<meta property="og:image" content="http://example.com/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E8%BF%90%E7%AE%97%E6%96%B9%E5%BC%8F.png">
 <meta property="article:published_time" content="2024-08-17T12:00:40.000Z">
-<meta property="article:modified_time" content="2024-08-27T08:47:11.986Z">
+<meta property="article:modified_time" content="2024-08-27T08:59:38.799Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体">
 <meta name="twitter:card" content="summary_large_image">
@@ -233,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.5k 字
         
       </span>
     
@@ -244,7 +247,7 @@
         
         
         
-          11 分钟
+          13 分钟
         
       </span>
     
@@ -303,10 +306,6 @@
 <p>存算一体是在存储器中嵌入计算能力，用新的运算架构来进行二维和三维矩阵乘法&#x2F;加法运算。存算一体这一技术概念，最早可以追溯到上个世纪70年代，近几年随着云计算和AI的迅速发展，面对各种数据洪流，数据迁移成为了一个非常大的问题，也就是IO瓶颈。</p>
 <p>计算性能的提升速率远高于内存性能的提升，结果长期下来，存储速度严重滞后于运算速度，因此我们发明了各种软硬件方法来提升IO速率，例如缓存，又分为二级缓存，三级缓存等等。</p>
 <p>在传统的冯诺依曼架构中，存储是为计算服务的，因此会天然的把运算和存储进行分离。但是如今存储和计算不得不一起考虑。</p>
-<p>忆阻器便是在存算一体中的一个重要器件，1971年美籍华人蔡少棠在论文中预言了忆阻器的存在。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png" srcset="/img/loading.gif" lazyload alt="忆阻器的预言"></p>
-<p>在电路中有四个基本变量，电流、电压、电荷、磁通量，他们之间的关系构成了基本无源电路元件：电阻、电感、电容。但是在四个象限中还少一个，论文中预言了这种元器件的存在，并且设想了这种元件给电路带来很多有趣的特性，被命名为忆阻器(memristor -&gt; memory resistor)。</p>
-<p>2008年惠普的科学家第一次制造出了这种元件。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E5%88%B6%E9%80%A0.png" srcset="/img/loading.gif" lazyload alt="忆阻器的制造"></p>
-<p>忆阻器最初是由一片双层的二氧化钛薄膜所成，当电流流过时，其电阻值就会发生改变。</p>
 <p>以下这篇博客希望大家可以看一下，里边讲了很多存算一体的基本概念：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.eet-china.com/mp/a195588.html">1.存算一体的发展史、优势、应用方向、主要介质</a></li>
@@ -319,7 +318,26 @@
 <li>存储器内部访存带宽高</li>
 <li>在存储阵列上原位执行计算，并行度高</li>
 </ul>
-<h2 id="2-存算一体分类"><a href="#2-存算一体分类" class="headerlink" title="2. 存算一体分类"></a>2. 存算一体分类</h2><p>目前，存算一体的技术路径尚未形成统一的分类，目前主流的划分方法是依照计算单元与存储单元的距离，将其大致分为</p>
+<h2 id="2-忆阻器的概念"><a href="#2-忆阻器的概念" class="headerlink" title="2. 忆阻器的概念"></a>2. 忆阻器的概念</h2><p>忆阻器便是在存算一体中的一个重要器件，1971年美籍华人蔡少棠在论文中预言了忆阻器的存在。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E9%A2%84%E8%A8%80.png" srcset="/img/loading.gif" lazyload alt="忆阻器的预言"></p>
+<p>在电路中有四个基本变量，电流、电压、电荷、磁通量，他们之间的关系构成了基本无源电路元件：电阻、电感、电容。但是在四个象限中还少一个，论文中预言了这种元器件的存在，并且设想了这种元件给电路带来很多有趣的特性，被命名为忆阻器(memristor -&gt; memory resistor)。</p>
+<p>2008年惠普的科学家第一次制造出了这种元件。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%9A%84%E5%88%B6%E9%80%A0.png" srcset="/img/loading.gif" lazyload alt="忆阻器的制造"></p>
+<p>忆阻器最初是由一片双层的二氧化钛薄膜所成，当电流流过时，其电阻值就会发生改变。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E7%BB%93%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="忆阻器结构"></p>
+<p>理想的人工突触器件应该具有以下性质：</p>
+<blockquote>
+<p>具有非易失的突触权重<br>具有突触可塑性<br>突触权重能够通过学习从而发生改变<br>纳米级尺寸<br>低功耗<br>易于大规模互连集成。<br>忆阻器满足了上述的所有条件。</p>
+</blockquote>
+<p>AI中存在着大量的矩阵运算，例如矩阵乘以向量。<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png" srcset="/img/loading.gif" lazyload alt="矩阵运算"></p>
+<p>传统的思路是，每一个节点都需要运算器来计算一遍，那么忆阻器是如何实现的呢？<br><img src="/2024/08/17/1_2-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93/%E5%BF%86%E9%98%BB%E5%99%A8%E8%BF%90%E7%AE%97%E6%96%B9%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="忆阻器运算方式"><br>根据基尔霍夫定律，每一个节点的电流可以直接进行相加，之后在横向的一侧进行测量，便可以直接得到运算结果。</p>
+<p>我们相当于一次性就可以完成这个矩阵乘以向量的计算，效率大大的。</p>
+<p>那么现在我们想，这个模型会遇到什么问题？</p>
+<blockquote>
+<ol>
+<li>计算数值非常大？</li>
+<li>矩阵本身非常大？</li>
+<li>模拟计算本身的误差该如何消除？<br>…</li>
+</ol>
+</blockquote>
+<h2 id="3-存算一体分类"><a href="#3-存算一体分类" class="headerlink" title="3. 存算一体分类"></a>3. 存算一体分类</h2><p>目前，存算一体的技术路径尚未形成统一的分类，目前主流的划分方法是依照计算单元与存储单元的距离，将其大致分为</p>
 <ol>
 <li>近存计算（PNM）</li>
 <li>存内处理（PIM）</li>
