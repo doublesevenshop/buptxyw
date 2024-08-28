@@ -28,8 +28,9 @@
 <meta property="og:image" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/PRIME%E6%9E%B6%E6%9E%84%E5%AF%B9%E6%AF%94%E5%9B%BE.png">
 <meta property="og:image" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/%E5%AE%8C%E6%95%B4%E7%9A%84%E7%94%B5%E8%B7%AF%E5%9B%BE.png">
 <meta property="og:image" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/FF%E9%85%8D%E7%BD%AE%E5%AE%9E%E4%BE%8B.jpeg">
+<meta property="og:image" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/PRIME%E7%BC%96%E7%A8%8B%E6%B5%81%E7%A8%8B.jpeg">
 <meta property="article:published_time" content="2024-08-25T16:04:06.000Z">
-<meta property="article:modified_time" content="2024-08-28T03:47:41.771Z">
+<meta property="article:modified_time" content="2024-08-28T07:47:58.164Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体 精读">
 <meta name="twitter:card" content="summary_large_image">
@@ -236,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          2.9k 字
         
       </span>
     
@@ -247,7 +248,7 @@
         
         
         
-          21 分钟
+          25 分钟
         
       </span>
     
@@ -362,6 +363,18 @@
 <p>问：dynamic fiexed point又是什么？</p>
 </blockquote>
 <p>对于它如何优化精度的，里边有一堆公式，我还没有看懂，之后再详细看下这个精度优化过程。</p>
+<h2 id="1-5-System-Level-Design"><a href="#1-5-System-Level-Design" class="headerlink" title="1.5. System-Level Design"></a>1.5. System-Level Design</h2><p>从软件编程到硬件执行，PRIME有三个阶段：编程(编码)、编译(代码优化)、代码执行。</p>
+<p><img src="/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/PRIME%E7%BC%96%E7%A8%8B%E6%B5%81%E7%A8%8B.jpeg" srcset="/img/loading.gif" lazyload alt="PRIME编程流程"><br>在软件层面的PRIME中，它首先把NN参数划分为五个部分，每个部分都提供对应的API；之后在编译层面，根据外围电路配置来选择模式，并且把NN加载到对应的模块中，并且将计算数据也加载到对应模块中。最终进行计算。<strong>（后边加载的过程还没看太懂，之后再细读一下！）</strong></p>
+<p>在编译优化层面，NN映射会针对不同大小的模型来进行优化。</p>
+<ol>
+<li><p><strong>Small Scale NN</strong>：直接Replication，如果NN能被单个的FF mat装载，说明这是一个小网络。但是小网络的话会存在一些问题，例如利用率不高、加速效果不明显(外围电路延迟超过矩阵运算的延迟)，他们把一个小的NN放到不同的mat上。例如：为了实现一个128 * 1的NN，会复制成为一个256 * 2的NN映射到mat上，同样这种优化可以用在卷积层上。</p>
+</li>
+<li><p><strong>Medium Scale NN</strong>：优化方案是拆分合并。当一个NN不能映射到单个的FF的mat，但是可以放在一个bank中，这便是一个中等规模的NN。在编译映射过程中，一个中等规模的NN必须被切分成小的NN，然后再合并他们的结果。例如：在一块256 * 256的mat上计算512 * 512的NN，需要切分成四个部分M11， M12，M21，M22，将他们分别映射到4个mat上，之后再将运算结果合并起来。</p>
+</li>
+</ol>
+<blockquote>
+<p>问：mat和bank的区别是什么？这些概念在哪里？需要查找一下</p>
+</blockquote>
 <p><strong>ReLU</strong>：</p>
 <h1 id="2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks"><a href="#2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks" class="headerlink" title="2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks"></a>2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</h1><ol>
 <li>A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</li>
