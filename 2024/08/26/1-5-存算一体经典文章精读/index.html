@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/%E5%AE%8C%E6%95%B4%E7%9A%84%E7%94%B5%E8%B7%AF%E5%9B%BE.png">
 <meta property="og:image" content="http://example.com/2024/08/26/1-5-%E5%AD%98%E7%AE%97%E4%B8%80%E4%BD%93%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0%E7%B2%BE%E8%AF%BB/FF%E9%85%8D%E7%BD%AE%E5%AE%9E%E4%BE%8B.jpeg">
 <meta property="article:published_time" content="2024-08-25T16:04:06.000Z">
-<meta property="article:modified_time" content="2024-08-28T02:54:22.240Z">
+<meta property="article:modified_time" content="2024-08-28T03:47:41.771Z">
 <meta property="article:author" content="杜子源">
 <meta property="article:tag" content="存算一体 精读">
 <meta name="twitter:card" content="summary_large_image">
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          2.5k 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          19 分钟
+          21 分钟
         
       </span>
     
@@ -349,25 +349,19 @@
 </li>
 </ol>
 <p>内存和计算模式的切换步骤：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 在切换到计算模式之前，先把存储在FF阵列的数据迁移到内存子阵列特定的分配空间中，然后将需要计算的权重放到FF子阵列中。<br><span class="hljs-bullet">2.</span> 数据准备就绪后，PRIME控制器重新配置外围电路，FF子阵列开始执行映射的NN。<br><span class="hljs-bullet">3.</span> 完成计算后，FF子阵列通过重新配置外围电路切换回内存模式。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 在切换到计算模式之前，先把存储在FF阵列的数据迁移到内存子阵列特定的分配空间中，然后将需要计算的权重放到FF子阵列中。<br><span class="hljs-bullet">2.</span> 数据准备就绪后，PRIME控制器重新配置外围电路，FF子阵列开始执行映射的NN。<br><span class="hljs-bullet">3.</span> 完成计算后，FF子阵列通过重新配置外围电路切换回内存模式。<br><br></code></pre></td></tr></table></figure>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>Buffer有两个功能，首先他们用于缓存FF子数组的IO数据；此外由于数据的IO是串行的，因此非常有必要缓存这些数据。FF和Buffer的通信不需要CPU，因此CPU和FF可以并行工作。在选择Buffer位置的时候，将FF旁边的内存作为缓存区，使得延迟最小化。</p>
+<blockquote>
+<p>问：但是在这个地方，<code>Global Row buffer</code>的作用是什么？</p>
+</blockquote>
+<p>除了控制器之外，还有精度问题在文中也有被提到：输入精度、权重精度、计算输出精度以及他们对神经网络应用结果的影响。</p>
+<p>神经网络算法对于输入数据和权重的精度具有很强的鲁棒性。</p>
+<blockquote>
+<p>问：dynamic fiexed point又是什么？</p>
+</blockquote>
+<p>对于它如何优化精度的，里边有一堆公式，我还没有看懂，之后再详细看下这个精度优化过程。</p>
 <p><strong>ReLU</strong>：</p>
 <h1 id="2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks"><a href="#2-A-Survey-of-ReRAM-Based-Architectures-for-Processing-In-Memory-and-Neural-Networks" class="headerlink" title="2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks"></a>2. A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</h1><ol>
 <li>A Survey of ReRAM-Based Architectures for Processing-In-Memory and Neural Networks</li>
